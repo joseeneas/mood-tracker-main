@@ -1,0 +1,24 @@
+{
+	"name": "mood-tracker",
+	"private": true,
+	"packageManager": "pnpm@8.15.6",
+	"engines": {
+		"node": ">=18"
+	},
+	"scripts": {
+		"prepare": "husky",
+		"build": "turbo build",
+		"dev": "turbo dev",
+		"lint": "turbo lint --continue",
+		"lint-staged": "turbo lint-staged --concurrency 1 --continue",
+		"format": "prettier --write \"**/*.{ts,tsx,md}\""
+	},
+	"devDependencies": {
+		"husky": "^9.1.4",
+		"@repo/eslint-config": "workspace:*",
+		"@repo/prettier-config": "workspace:*",
+		"lint-staged": "^15.2.8",
+		"prettier": "^3.2.5",
+		"turbo": "^2.0.12"
+	}
+}

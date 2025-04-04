@@ -1,0 +1,30 @@
+{
+	"$schema": "https://turbo.build/schema.json",
+	"globalDependencies": ["**/.env.*local"],
+	"globalEnv": [
+		"STATIC_API_KEY",
+		"PORT",
+		"DATABASE_URL",
+		"NODE_ENV",
+		"NEXT_PUBLIC_BACKEND_URL"
+	],
+	"ui": "tui",
+	"tasks": {
+		"build": {
+			"dependsOn": ["^build"],
+			"inputs": ["$TURBO_DEFAULT$", ".env*"],
+			"outputs": [".next/**", "!.next/cache/**"]
+		},
+		"lint": {
+			"dependsOn": ["^lint"]
+		},
+		"lint-staged": {
+			"cache": false,
+			"dependsOn": ["^lint-staged"]
+		},
+		"dev": {
+			"cache": false,
+			"persistent": true
+		}
+	}
+}

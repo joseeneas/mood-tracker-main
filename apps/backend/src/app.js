@@ -19,6 +19,6 @@ app.use("/", moodRoutes)
 sequelize
 	.sync()
 	.then(() => console.log("Database connected 🚀"))
-	.catch((err) => console.error("Unable to connect to the database:", err))
+	.catch((err) => console.error("apps: Unable to connect to the database:", err))
 
 module.exports = app

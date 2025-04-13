@@ -18,7 +18,7 @@ services:
       context: .
       dockerfile: backend.Dockerfile
     environment:
-      DATABASE_URL: postgres://postgres:password@postgres:5432/postgres
+      DATABASE_URL: postgres://postgres:top2gun6@postgres:5432/postgres
       STATIC_API_KEY: ${STATIC_API_KEY}
     networks:
       - mood_tracker_network

@@ -25,7 +25,7 @@ const migrate = async () => {
 			console.error("Error during migration, transaction rolled back:", error)
 		}
 	} catch (error) {
-		console.error("Unable to connect to the database:", error)
+		console.error("dbmigrate: Unable to connect to the database:", error)
 		process.exit(1)
 	} finally {
 		await sequelize.close()

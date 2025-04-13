@@ -3,5 +3,13 @@
     {
       "mode": "auto"
     }
-  ]
+  ],
+  "cSpell.customDictionaries": {
+    "custom-dictionary-workspace": {
+      "name": "custom-dictionary-workspace",
+      "path": "${workspaceFolder:mood-tracker-main}/.cspell/custom-dictionary-workspace.txt",
+      "addWords": true,
+      "scope": "workspace"
+    }
+  }
 }

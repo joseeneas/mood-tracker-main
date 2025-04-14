@@ -1,6 +1,6 @@
-const express = require("express")
+const express                  = require("express")
 const { createMood, getMoods } = require("./mood.controller")
-const router = express.Router()
+const router                   = express.Router()
 
 router.post("/moods", createMood)
 router.get("/moods", getMoods)

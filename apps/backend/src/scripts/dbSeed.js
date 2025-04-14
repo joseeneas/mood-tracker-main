@@ -1,6 +1,6 @@
 require("dotenv").config()
 const sequelize = require("../config/database")
-const Mood = require("../mood/mood.model")
+const Mood      = require("../mood/mood.model")
 
 const seed = async () => {
 	try {

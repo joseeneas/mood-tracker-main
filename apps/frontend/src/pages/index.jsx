@@ -1,3 +1,4 @@
+// ------------------
 import { useRouter } from "next/router"
 import { useEffect, useRef, useState } from "react"
 import clsx from "clsx"
@@ -5,12 +6,12 @@ import { Inter } from "next/font/google"
 import Modal from "../../components/modal/modal"
 import Mood from "../../components/mood/mood"
 import Sidebar from "../../components/sidebar/sidebar"
-
+// ------------------
 const inter = Inter({ subsets: ["latin"] })
-// ----------
+// ------------------
 // Comment #2
 // Recommendation: #3
-// ----------
+// ------------------
 async function createMood(newMood) {
 	try {
 		const response = await fetch("/api/moods", {
@@ -20,10 +21,10 @@ async function createMood(newMood) {
 			},
 			body: JSON.stringify({ type: newMood }),
 		})
-		// ----------
+		// ------------------
 		// Comment #3
 		// Recommendation: #2
-		// ----------
+		// ------------------
 		if (!response.ok) {
 			throw new Error("Failed to create mood")
 		}
@@ -33,7 +34,6 @@ async function createMood(newMood) {
 		console.error("Error creating mood:", error)
 	}
 }
-
 export default function Home() {
 	// ----------
 	// Comment #4
@@ -41,16 +41,17 @@ export default function Home() {
 	const [moodList, setMoodList] = useState([])
 	const [showModal, setShowModal] = useState(false)
 	const router = useRouter()
-	// ----------
+	// ------------------
 	// Comment #5
 	// Comment #9
 	// Recommendation: #1
-	// ----------
+	// Recommendation: #7
+	// ------------------
 	const scollToRef = useRef(null)
 	useEffect(() => {
-		// ----------
+		// ------------------
 		// Recommendation: #5
-		// ----------
+		// ------------------
 		async function fetchMoods() {
 			try {
 				const response = await fetch("/api/moods")
@@ -67,15 +68,15 @@ export default function Home() {
 		const date = new Date()
 		const createdMood = await createMood(newMood)
 		if (createdMood) {
-			// ----------
+			// ------------------
 			// Comment #6
 			// Recommendation: #6
-			// ----------
+			// ------------------
 			setMoodList((currentMood) => [...currentMood, { mood: newMood, date }])
-			// ----------
+			// ------------------
 			// Comment #7
 			// Recommendation: #4
-			// ----------
+			// ------------------
 			router.query.mood = newMood
 			router.push(router)
 			setShowModal(false)
